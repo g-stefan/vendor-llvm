@@ -1,2 +1,2 @@
 # vendor-llvm
-LLVM
+llvm
