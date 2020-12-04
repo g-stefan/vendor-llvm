@@ -5,7 +5,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-echo -^> git-release-check vendor-llvm
+echo -^> github-release-check vendor-llvm
 
 set PROJECT=vendor-llvm
 SET PROJECT_VENDOR=%PROJECT:vendor-=%
