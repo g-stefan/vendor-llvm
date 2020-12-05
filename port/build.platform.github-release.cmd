@@ -18,7 +18,7 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`xyo-version --no-bump --get "--version-file=
 
 echo -^> release %PROJECT% v%VERSION%
 
-git pull --tags origin master
+git pull --tags origin main
 git rev-parse --quiet "v%VERSION%" 1>NUL 2>NUL
 if not errorlevel 1 goto tagExists
 git tag -a v%VERSION% -m "v%VERSION%"
@@ -26,8 +26,8 @@ git push --tags
 echo Create release %PROJECT% v%VERSION%
 github-release release --repo %PROJECT% --tag v%VERSION% --name "v%VERSION%" --description "Release"
 pushd release
-for /r %%i in (%PROJECT%-%VERSION%*.7z) do echo Upload %%~nxi & github-release upload --repo %PROJECT% --tag v%VERSION% --name "%%~nxi" --file "%%i"
-for /r %%i in (%PROJECT%-%VERSION%*.csv) do echo Upload %%~nxi & github-release upload --repo %PROJECT% --tag v%VERSION% --name "%%~nxi" --file "%%i"
+for /r %%i in (%PROJECT_VENDOR%-%VERSION%*.7z) do echo Upload %%~nxi & github-release upload --repo %PROJECT% --tag v%VERSION% --name "%%~nxi" --file "%%i"
+for /r %%i in (%PROJECT_VENDOR%-%VERSION%*.csv) do echo Upload %%~nxi & github-release upload --repo %PROJECT% --tag v%VERSION% --name "%%~nxi" --file "%%i"
 popd
 
 goto :eof
