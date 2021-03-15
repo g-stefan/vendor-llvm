@@ -22,16 +22,16 @@ if not "%ACTION%" == "make" goto :eof
 
 call :cmdX xyo-cc --mode=%ACTION% --source-has-archive llvm
 
-if not exist build\ mkdir build
-if not exist build\cmake mkdir build\cmake
+if not exist temp\ mkdir temp
+if not exist temp\cmake mkdir temp\cmake
 
-pushd build
+pushd temp
 set WORKSPACE_PATH_BUILD=%CD%
-popd build
+popd temp
 
 if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
 
-pushd build\cmake
+pushd temp\cmake
 
 SET CMD_CONFIG=cmake
 SET CMD_CONFIG=%CMD_CONFIG% ../../source/llvm
