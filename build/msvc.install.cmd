@@ -3,7 +3,7 @@ rem Public domain
 rem http://unlicense.org/
 rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
-echo -^> install vendor-llvm
+echo - %BUILD_PROJECT% ^> install
 
 set INSTALL_PATH=%XYO_PATH_REPOSITORY%\opt\llvm
 set INSTALL_PATH_BIN=%INSTALL_PATH%
