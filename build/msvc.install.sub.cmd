@@ -12,6 +12,6 @@ rem ---
 
 if not exist "%INSTALL_PATH%\" mkdir "%INSTALL_PATH%"
 
-xcopy /Y /S /E "temp\llvm\*" "%INSTALL_PATH%\"
+xcopy /Y /S /E "output\*" "%INSTALL_PATH%\"
 
 

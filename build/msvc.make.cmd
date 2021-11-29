@@ -22,15 +22,17 @@ if not "%ACTION%" == "make" goto :eof
 
 call :cmdX xyo-cc --mode=%ACTION% --source-has-archive llvm
 
+if not exist output\ mkdir output
 if not exist temp\ mkdir temp
 if not exist temp\cmake mkdir temp\cmake
 
-pushd temp
-set WORKSPACE_PATH_BUILD=%CD%
-popd temp
+set WORKSPACE_PATH=%CD%
+set WORKSPACE_PATH_OUTPUT=%WORKSPACE_PATH%\output
+set WORKSPACE_PATH_BUILD=%WORKSPACE_PATH%\temp
 
 if exist %WORKSPACE_PATH_BUILD%\build.done.flag goto :eof
 
+if not exist temp\cmake mkdir temp\cmake
 pushd temp\cmake
 
 SET CC=cl.exe
@@ -40,7 +42,7 @@ SET CMD_CONFIG=cmake
 SET CMD_CONFIG=%CMD_CONFIG% ../../source/llvm
 SET CMD_CONFIG=%CMD_CONFIG% -G "Ninja"
 SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_BUILD_TYPE=Release
-SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_INSTALL_PREFIX=%WORKSPACE_PATH_BUILD%\llvm
+SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_INSTALL_PREFIX=%WORKSPACE_PATH_OUTPUT%
 SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;libc;libclc;libcxx;libcxxabi;libunwind;lld;lldb;mlir;openmp;parallel-libs;polly;pstl;"
 SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_TARGETS_TO_BUILD="host;WebAssembly"
 SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_ENABLE_RTTI=ON
