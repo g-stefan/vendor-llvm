@@ -43,7 +43,7 @@ SET CMD_CONFIG=%CMD_CONFIG% ../../source/llvm
 SET CMD_CONFIG=%CMD_CONFIG% -G "Ninja"
 SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_BUILD_TYPE=Release
 SET CMD_CONFIG=%CMD_CONFIG% -DCMAKE_INSTALL_PREFIX=%WORKSPACE_PATH_OUTPUT%
-SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;libc;libclc;libcxx;libcxxabi;libunwind;lld;lldb;mlir;openmp;parallel-libs;polly;pstl;"
+SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;libc;libclc;libcxx;libcxxabi;libunwind;lld;lldb;mlir;openmp;polly;pstl;"
 SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_TARGETS_TO_BUILD="host;WebAssembly"
 SET CMD_CONFIG=%CMD_CONFIG% -DLLVM_ENABLE_RTTI=ON
 
