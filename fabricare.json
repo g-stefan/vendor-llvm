@@ -4,7 +4,10 @@
 		"type" : "xyo-cpp",
 		"SPDX-License-Identifier": "Apache-2.0 WITH LLVM-exception",
 		"sourceLink" : "https://releases.llvm.org/download.html",
-		"version" : "14.0.0",
-		"releaseOutput" : true
+		"version" : "15.0.6",
+		"hasRelease" : true,
+		"releaseOutput" : true,
+		"noVersion" : true,
+		"githubRelease" : true
 	}
 }
