@@ -8,6 +8,7 @@
 		"hasRelease" : true,
 		"releaseOutput" : true,
 		"noVersion" : true,
-		"githubRelease" : true
+		"githubRelease" : true,
+		"githubRepository" : "vendor-llvm"
 	}
 }
