@@ -5,5 +5,5 @@
 
 messageAction("install");
 
-forceRemoveDirRecursively(pathRepository + "/opt/llvm");
+Shell.removeDirRecursivelyForce(pathRepository + "/opt/llvm");
 exitIf(!Shell.copyDirRecursively("output", pathRepository + "/opt/llvm"));
