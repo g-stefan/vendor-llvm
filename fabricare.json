@@ -1,14 +1,19 @@
 {
-	"project": {
-		"name" : "llvm",
+	"solution": {
+		"name" : "vendor-llvm",
 		"type" : "xyo-cpp",
-		"SPDX-License-Identifier": "Apache-2.0 WITH LLVM-exception",
-		"sourceLink" : "https://releases.llvm.org/download.html",
-		"version" : "15.0.6",
-		"hasRelease" : true,
+		"projects": [
+			{
+				"name" : "llvm",
+				"SPDX-License-Identifier": "Apache-2.0 WITH LLVM-exception",
+				"sourceLink" : "https://releases.llvm.org/download.html",
+				"version" : "15.0.6",
+				"noVersion" : true
+			}
+		],
+		"releaseName" : "llvm",
 		"releaseOutput" : true,
-		"noVersion" : true,
-		"githubRelease" : true,
-		"githubRepository" : "vendor-llvm"
+		"hasGithub" : true
 	}
 }
+
