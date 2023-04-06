@@ -38,6 +38,14 @@ if (!Shell.fileExists("temp/build.config.flag")) {
 	cmdConfig+=" -DLLVM_ENABLE_PROJECTS=\"clang;compiler-rt;libc;libclc;libcxx;libcxxabi;libunwind;lld;lldb;mlir;openmp;polly;pstl;\"";
 	cmdConfig+=" -DLLVM_TARGETS_TO_BUILD=\"host;WebAssembly\"";
 	cmdConfig+=" -DLLVM_ENABLE_RTTI=ON";
+	/* 16.0.0
+	cmdConfig+=" -DLLVM_ENABLE_PROJECTS=\"clang;compiler-rt;libc;libclc;lld;lldb;mlir;polly;openmp;pstl;bolt;clang-tools-extra\"";
+	cmdConfig+=" -DLLVM_ENABLE_RUNTIMES=\"libcxx;libcxxabi;libunwind\"";
+	cmdConfig+=" -DLLVM_TARGETS_TO_BUILD=\"host;WebAssembly\"";
+	cmdConfig+=" -DLLVM_ENABLE_RTTI=ON";
+	cmdConfig+=" -DLLVM_ENABLE_EH=On";
+	cmdConfig+=" -DCMAKE_CXX_STANDARD=17";
+	*/
 
 	runInPath("temp/cmake",function(){
 		exitIf(Shell.system(cmdConfig));
