@@ -12,8 +12,7 @@
 			}
 		],
 		"releaseName" : "llvm",
-		"releaseOutput" : true,
-		"hasGithub" : true
+		"releaseOutput" : true
 	}
 }
 
