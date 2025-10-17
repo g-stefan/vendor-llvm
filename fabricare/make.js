@@ -26,6 +26,7 @@ Shell.mkdirRecursivelyIfNotExists("temp/cmake");
 
 if (!Shell.fileExists("temp/build.config.flag")) {
 	Shell.copyFile("fabricare/CMakeLists.txt","source/CMakeLists.txt");
+	Shell.copyFile("fabricare/source/Relocation.cpp","source/bolt/lib/Core/Relocation.cpp");
 
 	Shell.setenv("CC","cl.exe");
 	Shell.setenv("CXX","cl.exe");
